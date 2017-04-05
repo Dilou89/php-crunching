@@ -142,17 +142,15 @@
 
 	$dateSort=array();
 	for ($i=1; $i <=100 ; $i++) { 
-
 		$sorti=$top[$i]["im:releaseDate"]['label'];
-		array_push($dateSort, $sorti);
+		//var_dump($sorti);
+		array_push($dateSort, date_parse($sorti)["month"]);
 	}
-	print_r($dateSort);
+	//var_dump($dateSort);
 	
-
-
-
-
-
+	sort($dateSort);
+	echo"Le mois où il y a eu le plus de sorties est :";
+	print_r(end($dateSort));
 
 	?>
 
